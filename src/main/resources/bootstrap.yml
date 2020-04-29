@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: registry
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    # 由于当前应用为注册中心，所以设置不向注册中心注册自己
+    register-with-eureka: false
+    # 由于注册中心的职责是维护服务实例，不需要检索服务
+    fetch-registry: false
+  server:
+    # 扫描失效服务的间隔时间（缺省为60*1000ms）
+    eviction-interval-timer-in-ms: 5000
+    # 关闭自我保护(生产时打开该选项)
+    enable-self-preservation: false
+    # 设置同步为空时的等待时间
+    registry-sync-retry-wait-ms: 0
+  instance:
+    # eureka注册中心显示时，强制显示ip:port
+    # HostInfoEnvironmentPostProcessor类中定义属性名改为ip-address
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    # 强制使用ip进行注册
+    prefer-ip-address: true
+
+logging:
+  path: /opt/logs/dev/loan2-1/eureka

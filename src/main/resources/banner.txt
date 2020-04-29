@@ -1,0 +1,6 @@
+${AnsiColor.BRIGHT_RED}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+Powered By aq
+banner generator url: https://devops.datenkollektiv.de/banner.txt/index.html
+banner font: big
+${AnsiColor.BLACK}
