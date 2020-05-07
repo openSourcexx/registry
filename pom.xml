@@ -57,7 +57,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <classifier>starter</classifier>
-                    <outputDirectory>demo-${project.name}-web/target</outputDirectory>
+                    <attach>false</attach>
+                    <finalName>registry-web</finalName>
                 </configuration>
             </plugin>
             <plugin>
